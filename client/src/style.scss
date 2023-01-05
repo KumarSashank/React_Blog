@@ -1,3 +1,5 @@
+$lightGreen : #b9e7e7;
+
 .app{
     .container{
 
@@ -6,6 +8,47 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: $lightGreen;
+
+
+            form{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: white;
+                gap: 10px;
+
+                input{
+                    width: 200px;
+                    border:none;
+                    border-bottom: 1px solid gray;
+                    padding: 10px;
+                }
+
+                button{
+                    width: 200px;
+                    padding: 10px;
+                    margin-top: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: teal;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                span{
+                    font-size: 12px;
+                    text-align: center;
+                    padding: 10px;
+                    margin: 10px;
+                }
+            }
         }
     }
 }
