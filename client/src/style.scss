@@ -1,7 +1,12 @@
 $lightGreen : #b9e7e7;
 
 .app{
+    display: flex;
+        justify-content: center;
     .container{
+
+        width: 1024px;
+        
 
         //For Login and Register
         .Auth{
@@ -14,11 +19,12 @@ $lightGreen : #b9e7e7;
 
 
             form{
+                margin-top: 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                padding: 20px;
+                padding: 30px;
                 border-radius: 5px;
                 background-color: white;
                 gap: 10px;
@@ -42,12 +48,29 @@ $lightGreen : #b9e7e7;
                     cursor: pointer;
                 }
 
+                p{
+                    font-size: 12px;
+                    text-align: center;
+                    color: red;
+                    margin-bottom: 0px;
+                    padding: 10px;
+                }
+
                 span{
                     font-size: 12px;
                     text-align: center;
                     padding: 10px;
                     margin: 10px;
+                    margin-top: 0px;
+                    padding-top: 0px;
                 }
+            }
+        }
+
+        .navbar{
+            .container{
+                display:flex;
+                justify-content: space-between;
             }
         }
     }
