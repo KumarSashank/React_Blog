@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div className='Auth'>
-            <h1>Login</h1>
+            <h1>Register</h1>
             <form >
                 <input required type="text" placeholder='Username' name="" id="" />
                 <input required type="email" placeholder='Email' name="" id="" />

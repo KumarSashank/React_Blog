@@ -15,7 +15,7 @@ $lightGreen : #b9e7e7;
             justify-content: center;
             flex-direction: column;
             height: 100vh;
-            background-color: $lightGreen;
+            background-color: #f6ddcd;
 
 
             form{
@@ -42,7 +42,7 @@ $lightGreen : #b9e7e7;
                     margin-top: 10px;
                     border: none;
                     border-radius: 5px;
-                    background-color: teal;
+                    background-color: rgb(240, 187, 72);
                     color: white;
                     font-weight: bold;
                     cursor: pointer;
@@ -129,6 +129,45 @@ $lightGreen : #b9e7e7;
 
             img{
                 height:50px;
+            }
+        }
+        .link{
+            text-decoration: none;
+            color: black;
+        }
+
+        .home{
+            .posts{
+                margin-top:50px;
+                display:flex;
+                flex-direction:column;
+                gap:150px;
+
+                    
+
+                    .post{
+                        display:flex;
+                        gap:100px;
+
+                        &:nth-child(2n+1){
+                            flex-direction:row-reverse;
+                        }
+                        .img{
+                            flex:2;
+
+                            img{
+
+                                width:100%;
+                                max-height: 400px;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .content{
+                            flex:3;
+                        }
+                    }
+                
             }
         }
     }
