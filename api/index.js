@@ -1,5 +1,6 @@
 import express from "express";
 import authRoutes from "./routes/auth.js";
+import { db } from "./db.js";
 // import userRoutes from "./routes/users.js";
 // import postRoutes from "./routes/posts.js";
 // import cookieParser from "cookie-parser";
@@ -39,6 +40,18 @@ app.use("/api/auth", authRoutes);
 // app.use("/api/users", userRoutes);
 // app.use("/api/posts", postRoutes);
 
+// app.listen(8800, () => {
+//   console.log("Connected!");
+// });
+
 app.listen(8800, () => {
-  console.log("Connected!");
+  console.log("Server is running on port 8800");
+
+  db.connect((error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Database connected");
+    }
+  });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
@@ -11,6 +11,10 @@ const Login = () => {
         password:"",
     });
 
+    const [err,setError]=useState(null)
+
+    const navigate =useNavigate()
+
     const handleChange=e=>{
         setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
     }
@@ -20,10 +24,11 @@ const Login = () => {
         e.preventDefault();
         try{
             const res = await axios.post("http://localhost:8800/api/auth/register/",inputs)
+            navigate('/login')
             console.log(res);
         }
         catch(err){
-            console.log(err);
+            setError(err.response.data);
         }
     }
 
@@ -35,7 +40,7 @@ const Login = () => {
                 <input required type="email" placeholder='Email' onChange={handleChange} name="email" id="" />
                 <input required type="password" placeholder='Password' onChange={handleChange} name="password" id="" />
                 <button onClick={handleSubmit} type='submit'>Login</button>
-                <p>This is an error message.</p>
+                {err && <p>{err}</p>}
                 <span>Do you have an account? 
                     <Link to="/login">Login</Link>
                     </span>
